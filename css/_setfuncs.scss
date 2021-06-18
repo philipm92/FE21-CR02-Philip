@@ -1,0 +1,32 @@
+@mixin setmp-all($value) {
+    margin: $value;
+    padding: $value;
+}
+
+@mixin setmargin-tb($top,$bottom) {
+    margin: $top $bottom;
+}
+
+@mixin setmargin-trbl($top,$right,$bottom,$left) {
+    margin: $top $right $bottom $left;
+}
+
+@mixin setpadding-tb($top,$bottom) {
+    padding: $top $bottom;
+}
+
+@mixin setpadding-trbl($top,$right,$bottom,$left) {
+    padding: $top $right $bottom $left;
+}
+
+@mixin setfs($size) {
+    font-size: $size;
+}
+
+@mixin settransition($duration) {
+    transition: all $duration;    
+}
+
+@mixin settransform-scale($scx,$scy) {
+    transform: scale($scx,$scy);    
+}
