@@ -1,9 +1,5 @@
 @import "setfuncs";
-
-$head-bgcolor: #5b191a;
-$headline-bgcolor: #c4c4c4;
-$txt-bgcolor: #0e0d0d;
-$txt-primary: #323232;
+@import "colors";
 
 @mixin center-tag() {
     margin: 0 auto;
@@ -50,7 +46,7 @@ body {
 footer {
     background-color: $txt-bgcolor;
     color: white;
-    font-size: 1.8rem;
+    @include setfs(1.8rem);
     @include center-txt();
 
     width: 100%;
@@ -136,24 +132,6 @@ nav {
 }
 
 
-/* Make image zoom hover effect */ 
-/*.imgzoomeffect {
-    overflow: hidden;
-    margin: 0 auto;
-    img {
-        max-width: 100%;     
-        height: auto;
-        object-fit: cover;
-        @include settransform-scale(1,1);
-        @include settransition(1000ms);
-    }
-    img:hover {
-        @include settransition(500ms);
-        @include settransform-scale(2.5, 2.5);
-    }
-}*/
-
-
 /* For mobile phones: */
 @media screen and (max-width: 480px) {
     header {
@@ -177,7 +155,7 @@ nav {
     }
 
     footer {
-        font-size: 1.5rem;
+        @include setfs(1.5rem);
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-column-gap: 1em;

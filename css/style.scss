@@ -1,8 +1,58 @@
 @import "base";
 
 
-main {
+
+
+
+
+img {
+        max-width:100%;
+        margin: 0;       
+}
+
+.blog1 { 
+    grid-area: post1;
+    grid-row: 2;
+    grid-column: 1;    
+}
+.blog2 { 
+    grid-area: post2;
+    grid-row: 2;
+    grid-column: 2;   
+}
+.blog3 { 
+    grid-area: post3; 
+    grid-row: 2;
+    grid-column: 3;   
+}
+
+[class^="blog"] a {
+    text-decoration: none;
+    width: 50;
+    .desc {
+        background-color: $txt-bgcolor;
+        color: white;
+        @include center-txt();
+        @include setpadding-tb(1em,1em);
+    }
+}
+
+
+[class^="grid-container"] {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:'header header header' 'post1 post2 post3';
+    grid-template-columns: 33% 33% 33%;
     grid-template-rows: auto;
+    grid-gap: 1em;
+    padding: 1em;
+    margin: 1em 2em;
+    h3 {
+        grid-area: header;
+        grid-row: 1;
+        grid-column: 1;    
+        background-color: $headline-bgcolor;
+        @include setpadding-tb(0.5em,0.5em);
+        color: $txt-primary;
+        font-weight: normal;
+    }
 }
