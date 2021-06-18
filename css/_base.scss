@@ -39,19 +39,47 @@ body {
 }
 
 #main-container {
-    min-height: 90vh; /* will cover the 100% of viewport */
+    min-height: 80vh;
     overflow: hidden;
     display: block;
     width: auto;
     position: relative;
-    padding-bottom: 10vh; /* height of your footer */
+    padding-bottom: 20vh; /* height of your footer */
 }
 
 footer {
     background-color: $txt-bgcolor;
+    color: white;
+    font-size: 1.8rem;
+    @include center-txt();
+
+    width: 100%;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    border: 6px solid red;
+    justify-content: center; 
+    .footnav {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        border: 3px solid white;
+    }
+
+    .footimg {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        border: 3px dashed white;
+    }
+
+    .foottxt {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        border: 3px dotted white;
+    }
 }
 
 /*Header Design */
@@ -62,6 +90,7 @@ header {
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
     width: 100%;
     .header-row1 {
         width: 10%;
@@ -92,7 +121,7 @@ nav {
             color: white;
             text-decoration: none;
             transition: text-shadow 500ms, background-color 750ms;
-            @include setpadding-tb(1vh, 2vw);
+            @include setpadding-tb(1vh, 1vw);
             &:hover {
                 background-color: $head-bgcolor; /*rgba(255,255,255, 0.2);*/
                 text-shadow: 0 0 .8px white, 0 0 .8px white;
@@ -105,6 +134,7 @@ nav {
     }    
 
 }
+
 
 /* Make image zoom hover effect */ 
 /*.imgzoomeffect {
@@ -143,14 +173,59 @@ nav {
         justify-content: center;       
     }
     body {
-        background-color: red;
+        background-color: red; /*testing purpose */
     }
+
+    footer {
+        font-size: 1.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-column-gap: 1em;
+        grid-row-gap: 1em;
+        border: 4px solid blue;
+        @include setpadding-tb(1em,0);
+        .footnav {
+            grid-column: 1 / 1;
+            grid-row: 2 / 3;
+        }
+    
+        .footimg {
+            grid-column: 1 / 1;
+            grid-row: 1 / 2;
+        }
+    
+        .foottxt {
+            grid-column: 1 / 1;
+            grid-row: 3 / 3;
+        }
+    }   
     
 }
+
 /* For tablets: */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
     body {
-        background-color: skyblue;
+        background-color: skyblue; /*testing purpose */
+    }
+
+    nav {
+        justify-content: center;       
+    }
+
+    header {
+        flex-flow: column nowrap;
+        .header-row1 {
+            width: 50%;
+            @include setpadding-tb(0.5em,0);
+        }
+        .header-row2 {
+            width: 50%;
+            @include setpadding-tb(0.5em,0);
+        }
+    } 
+
+    footer {
+        font-size: 1.6rem;
     }
 }
 
