@@ -31,7 +31,12 @@ html {
 }
 
 body {
-    @include setfs(2.2rem); /* basically equals 21px now by default */
+    @include setfs(3rem); /* basically equals 30px now by default */
+}
+
+h3 {
+    color: $txt-primary;
+    font-weight: normal;    
 }
 
 #main-container {
@@ -133,6 +138,20 @@ nav {
 
 }
 
+/* Style Date */
+.flexdate {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-content: center; /* no idea why this won't center, and I do NOT want to set a fixed height */
+    align-items: center; /* no idea why this won't center, and I do NOT want to set a fixed height */
+    @include setmargin-trbl(0.5em, 1em, -2em, auto);
+    /*@include setpadding-trbl(0,0,0,1em);*/
+    width: 20%;
+    h3 {
+        text-align: right;
+    }
+}
 
 /* For mobile phones: */
 @media screen and (max-width: 480px) {
@@ -154,6 +173,10 @@ nav {
     }
     body {
         background-color: red; /*testing purpose */
+    }
+
+    .flexdate {
+        @include hideonmobile();
     }
 
     footer {
@@ -185,6 +208,7 @@ nav {
 @media screen and (min-width: 481px) and (max-width: 1024px) {
     body {
         background-color: skyblue; /*testing purpose */
+        @include setfs(3rem);
     }
 
     nav {
@@ -202,6 +226,19 @@ nav {
             @include setpadding-tb(0.5em,0);
         }
     } 
+
+    /* Style Date */
+    .flexdate {
+        /*@include setpadding-trbl(0,0,0,1em);
+        @include setmargin-trbl(0.5em, 1em, 0, auto);
+        width: 25%;*/
+        justify-content: center;
+        margin: 0.1em auto;
+        width: 90%;
+        h3 {
+            @include center-txt();
+        }
+    }
 
     footer {
         font-size: 1.6rem;

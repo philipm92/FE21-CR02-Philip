@@ -16,8 +16,13 @@ html {
 }
 
 body {
-  font-size: 2.2rem;
-  /* basically equals 21px now by default */
+  font-size: 3rem;
+  /* basically equals 30px now by default */
+}
+
+h3 {
+  color: #323232;
+  font-weight: normal;
 }
 
 #main-container {
@@ -160,6 +165,34 @@ nav li a:focus {
   text-shadow: 0 0 .8px white, 0 0 .8px white;
 }
 
+/* Style Date */
+.flexdate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  /* no idea why this won't center, and I do NOT want to set a fixed height */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* no idea why this won't center, and I do NOT want to set a fixed height */
+  margin: 0.5em 1em -2em auto;
+  /*@include setpadding-trbl(0,0,0,1em);*/
+  width: 20%;
+}
+
+.flexdate h3 {
+  text-align: right;
+}
+
 /* For mobile phones: */
 @media screen and (max-width: 480px) {
   header {
@@ -191,6 +224,9 @@ nav li a:focus {
   body {
     background-color: red;
     /*testing purpose */
+  }
+  .flexdate {
+    display: none;
   }
   footer {
     font-size: 1.5rem;
@@ -229,6 +265,7 @@ nav li a:focus {
   body {
     background-color: skyblue;
     /*testing purpose */
+    font-size: 3rem;
   }
   nav {
     -webkit-box-pack: center;
@@ -248,6 +285,20 @@ nav li a:focus {
   header .header-row2 {
     width: 50%;
     padding: 0.5em 0;
+  }
+  /* Style Date */
+  .flexdate {
+    /*@include setpadding-trbl(0,0,0,1em);
+        @include setmargin-trbl(0.5em, 1em, 0, auto);
+        width: 25%;*/
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0.1em auto;
+    width: 90%;
+  }
+  .flexdate h3 {
+    text-align: center;
   }
   footer {
     font-size: 1.6rem;
@@ -299,12 +350,11 @@ Should've started with mobile first and worked my way up, but well, for next tim
 .grid-container3 [class^="headline"] {
   padding: 0.5em 0.5em;
   background-color: #c4c4c4;
-}
-
-.grid-container3 [class^="headline"] > h3 {
-  color: #323232;
-  font-weight: normal;
-  font-size: 3rem;
+  /*> h3 {
+            color: $txt-primary;
+            font-weight: normal;
+            @include setfs(3rem);       
+        }*/
 }
 
 .blog1 {

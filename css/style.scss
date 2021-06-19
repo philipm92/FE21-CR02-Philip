@@ -29,11 +29,11 @@
     [class^="headline"] {
         @include setpadding-tb(0.5em,0.5em);
         background-color: $headline-bgcolor;
-        > h3 {
+        /*> h3 {
             color: $txt-primary;
             font-weight: normal;
             @include setfs(3rem);       
-        }
+        }*/
     }
 }
 
