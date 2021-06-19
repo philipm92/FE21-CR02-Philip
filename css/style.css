@@ -549,7 +549,7 @@ Should've started with mobile first and worked my way up, but well, for next tim
         grid-template-rows: auto;
         grid-template-areas: 'header1' 'post1' 'post2' 'post3' 'header2'  'post4'  'post5'  'post6';
     grid-gap: 0;
-    width: 100%;
+    max-width: 100%;
     margin: 0;
     padding: 0;
   }
@@ -656,6 +656,7 @@ Should've started with mobile first and worked my way up, but well, for next tim
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
+    max-width: 100%;
     margin: 0;
     padding: 0;
   }
