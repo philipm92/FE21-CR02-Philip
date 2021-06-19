@@ -57,6 +57,7 @@ footer {
           align-items: center;
   justify-items: center;
   place-items: center;
+  padding-top: 1em;
 }
 
 footer .footnav {
