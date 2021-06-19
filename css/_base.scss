@@ -35,12 +35,12 @@ body {
 }
 
 #main-container {
-    min-height: 80vh;
+    min-height: 100vh;
     overflow: hidden;
     display: block;
     width: auto;
     position: relative;
-    padding-bottom: 20vh; /* height of your footer */
+    padding-bottom: 60vh; /* height of your footer */
 }
 
 footer {
@@ -48,7 +48,6 @@ footer {
     color: white;
     @include setfs(1.8rem);
     @include center-txt();
-
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -58,7 +57,10 @@ footer {
     grid-column-gap: 1em;
     grid-row-gap: 1em;
     border: 6px solid red;
-    justify-content: center; 
+    justify-items: center;
+    align-items: center;
+    justify-items: center;
+    place-items: center;
     .footnav {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -158,8 +160,7 @@ nav {
         @include setfs(1.5rem);
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-column-gap: 1em;
-        grid-row-gap: 1em;
+        grid-gap: 1em;
         border: 4px solid blue;
         @include setpadding-tb(1em,0);
         .footnav {
