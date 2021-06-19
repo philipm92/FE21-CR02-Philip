@@ -1,0 +1,355 @@
+/* Apply basic html stuff, like to keep the footer down */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  position: relative;
+  color: #323232;
+}
+
+html {
+  font-size: 62.5%;
+  /* Default is 10px now */
+}
+
+body {
+  font-size: 3rem;
+  /* basically equals 30px now by default */
+}
+
+h3 {
+  color: #323232;
+  font-weight: normal;
+}
+
+#main-container {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  width: auto;
+  position: relative;
+  padding-bottom: 60vh;
+  /* height of your footer */
+}
+
+footer {
+  background-color: #0e0d0d;
+  color: white;
+  font-size: 1.8rem;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  place-items: center;
+}
+
+footer .footnav {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+footer .footimg {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+footer .foottxt {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+}
+
+/*Header Design */
+header {
+  background-color: #5b191a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em 1em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+header .header-row1 {
+  width: 10%;
+}
+
+header .header-row2 {
+  width: 20%;
+}
+
+header img {
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Navbar Design */
+nav {
+  background-color: #0e0d0d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: row nowrap;
+      flex-wrap: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 1vh 2vw;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: text-shadow 500ms, background-color 750ms;
+  transition: text-shadow 500ms, background-color 750ms;
+  padding: 1vh 1vw;
+}
+
+nav li a:hover {
+  background-color: #5b191a;
+  /*rgba(255,255,255, 0.2);*/
+  text-shadow: 0 0 .8px white, 0 0 .8px white;
+  -webkit-transition: text-shadow 200ms, background-color 300ms;
+  transition: text-shadow 200ms, background-color 300ms;
+}
+
+nav li a:focus {
+  text-shadow: 0 0 .8px white, 0 0 .8px white;
+}
+
+/* Style Date */
+.flexdate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  /* no idea why this won't center, and I do NOT want to set a fixed height */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* no idea why this won't center, and I do NOT want to set a fixed height */
+  margin: 0.5em 1em -2em auto;
+  /*@include setpadding-trbl(0,0,0,1em);*/
+  width: 20%;
+}
+
+.flexdate h3 {
+  text-align: right;
+}
+
+/* For mobile phones: */
+@media screen and (max-width: 480px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* align horizontal */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* align vertical */
+  }
+  header .header-row1 {
+    padding: 0.5em 0 0.5em 0;
+    width: 70%;
+  }
+  header .header-row2 {
+    display: none;
+  }
+  nav {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 2rem;
+  }
+  /*body {
+        background-color: red; testing purpose
+    }*/
+  .flexdate {
+    display: none;
+  }
+  footer {
+    font-size: 1.5rem;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    grid-gap: 1em;
+    padding: 1em 0;
+  }
+  footer .footnav {
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+  footer .footimg {
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+  }
+  footer .foottxt {
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
+    -ms-grid-row: 3;
+    grid-row: 3 / 3;
+  }
+}
+
+/* For tablets: */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  body {
+    /*background-color: skyblue; testing purpose */
+    font-size: 3rem;
+  }
+  nav {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  header .header-row1 {
+    width: 50%;
+    padding: 0.5em 0;
+  }
+  header .header-row2 {
+    width: 50%;
+    padding: 0.5em 0;
+  }
+  /* Style Date */
+  .flexdate {
+    /*@include setpadding-trbl(0,0,0,1em);
+        @include setmargin-trbl(0.5em, 1em, 0, auto);
+        width: 25%;*/
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0.1em auto;
+    width: 90%;
+  }
+  .flexdate h3 {
+    text-align: center;
+  }
+  footer {
+    font-size: 1.6rem;
+  }
+}
+
+/* For desktop: */
+/*@media screen and (min-width:1025px) {
+Should've started with mobile first and worked my way up, but well, for next time!
+}*/
+p {
+  margin: 0 auto;
+  text-align: left;
+  margin: 1em 1em;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+blog {
+  padding: 1em 1em;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+blog .heading {
+  padding: 1em 1em;
+  margin: 3em auto;
+  background-color: #c4c4c4;
+}
+
+blog .heading h3 {
+  text-align: center;
+}
+
+/* For tablets: */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  blog {
+    font-size: 1.8rem;
+  }
+  blog .heading {
+    padding: 1em 1em;
+    margin: 1em auto;
+  }
+}
+
+/* For mobile phones: */
+@media screen and (max-width: 480px) {
+  blog {
+    font-size: 1.5rem;
+  }
+  blog .heading {
+    padding: 1em 1em;
+    margin: 0 auto;
+  }
+}
+/*# sourceMappingURL=article.css.map */

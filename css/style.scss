@@ -35,60 +35,62 @@
             @include setfs(3rem);       
         }*/
     }
-}
 
-.blog1 { 
-    grid-area: post1;
-    grid-row: 2;
-    grid-column: 1;
-}
-.blog2 { 
-    grid-area: post2;
-    grid-row: 2;
-    grid-column: 2;   
-}
-.blog3 { 
-    grid-area: post3; 
-    grid-row: 2;
-    grid-column: 3;   
-}
-
-.blog4 { 
-    grid-area: post4;
-    grid-row: 4;
-    grid-column: 1;   
-}
-.blog5 { 
-    grid-area: post5;
-    grid-row: 4;
-    grid-column: 2;      
-}
-.blog6 { 
-    grid-area: post6;
-    grid-row: 4;
-    grid-column: 3;      
-}
-
-[class^="blog"] {
-    width: 100%;
-    @include center-txt();
-    @include setmargin-tb(0.8em,auto);
-    a {
-        text-decoration: none;
-        color: white;
-        .desc {
-            background-color: $txt-bgcolor;
-            color: white;
-            @include center-txt();
-            @include setpadding-tb(1em,1em);
-            margin-top: -0.3em;
-        }
+    .blog1 { 
+        grid-area: post1;
+        grid-row: 2;
+        grid-column: 1;
     }
-    img {
-        max-width:100%;
-        margin: 0 auto;       
-    }   
-}    
+    .blog2 { 
+        grid-area: post2;
+        grid-row: 2;
+        grid-column: 2;   
+    }
+    .blog3 { 
+        grid-area: post3; 
+        grid-row: 2;
+        grid-column: 3;   
+    }
+    
+    .blog4 { 
+        grid-area: post4;
+        grid-row: 4;
+        grid-column: 1;   
+    }
+    .blog5 { 
+        grid-area: post5;
+        grid-row: 4;
+        grid-column: 2;      
+    }
+    .blog6 { 
+        grid-area: post6;
+        grid-row: 4;
+        grid-column: 3;      
+    }
+
+    [class^="blog"] {
+        width: 100%;
+        @include center-txt();
+        @include setmargin-tb(0.8em,auto);
+        a {
+            text-decoration: none;
+            color: white;
+            .desc {
+                background-color: $txt-bgcolor;
+                color: white;
+                @include center-txt();
+                @include setpadding-tb(1em,1em);
+                margin-top: -0.3em;
+            }
+        }
+        img {
+            max-width:100%;
+            margin: 0 auto;       
+        }   
+    }
+
+}
+    
 
 /* END 3x2 Blog Container  */
 
@@ -96,35 +98,95 @@
 /* START 2x2 Blog Container  */
 .grid-container2 {
     display: grid;
-    grid-template-areas:'devimg devimg' 'post1 post2' 'post3 post4';
-    grid-template-columns: 45% 45%;
+    grid-template-areas:
+    'devimg devimg' 
+    'post7 post8' 
+    'post9 post10';
+    grid-template-columns: 40% 40%;
     grid-template-rows: auto;
-    grid-gap: 4% 6%;
-    padding: 1em;
-    margin: 2em 3em;
+    grid-gap: 5%;
+    padding: 0;
+    justify-content: center;
+    align-content: center;
+    @include center-txt();
+    @include setmargin-tb(0,auto);
 
     .devheadline {
-        grid-area: devimg; 
+        grid-area: devimg;
         grid-row: 1;
-        grid-column: 1 / span 2;    
-        @include setpadding-tb(0.5em,0.5em);   
+        grid-column: 1 / span 2;
+        margin-top: 6em; 
+        width: 100%;
+        img {
+            max-width:100%;
+            margin: 0 auto;       
+        }   
     }
 
+    .blog7 {
+        grid-area: post7;
+        grid-row: 2;
+        grid-column: 1;
+    }
 
+    .blog8 {
+        grid-area: post8;
+        grid-row: 2;
+        grid-column: 2;
+    }
+    
+    .blog9 {
+        grid-area: post9;
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .blog10 {
+        grid-area: post10;
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    [class^="blog"] {
+        @include center-txt();
+        @include setmargin-tb(0.8em,auto);
+        a {
+            text-decoration: none;
+            color: white;
+            .desc {
+                background-color: $txt-bgcolor;
+                color: white;
+                @include center-txt();
+                @include setpadding-tb(1em,1em);
+                margin-top: -0.3em;
+            }
+        }
+        img {
+            max-width:100%;
+            margin: 0 auto;       
+        }   
+    }
 
 }
 /* END 2x2 Blog Container  */
+
+
 @media screen and (max-width: 480px) {
     .grid-container3 {
         display: grid;
-        grid-template-areas:
-        'header1' 'post1'
-        'post2' 'post3'
-        'header2' 'post4'
-        'post5' 'post6';
         grid-template-columns: 100%;
         grid-template-rows: auto;
+        grid-template-areas:
+        'header1'
+        'post1'
+        'post2'
+        'post3'
+        'header2' 
+        'post4' 
+        'post5' 
+        'post6';       
         grid-gap: 0;
+        width: 100%;
         @include setmp-all(0);
 
         .headline1 {
@@ -195,6 +257,55 @@
         }  
     } 
 
+    .grid-container2 {
+        display: grid;
+        grid-template-areas: 
+        'devimg'
+        'post7' 
+        'post8'
+        'post9'
+        'post10';
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-gap: 0;
+        justify-content: center;
+        align-content: center;
+        @include setmp-all(0);
+
+        .devheadline {
+            grid-area: devimg;
+            grid-row: 1;
+            grid-column: 1;
+            @include hideonmobile();
+        }
+
+        .blog7 { 
+            grid-area: post7;
+            grid-row: 2;
+            grid-column: 1;
+        }
+    
+        .blog8 { 
+            grid-area: post8; 
+            grid-row: 3;
+            grid-column: 1;
+        }
+    
+        .blog9 { 
+            grid-area: post9;
+            grid-row: 4;
+            grid-column: 1; 
+        }
+        
+        .blog10 { 
+            grid-area: post10;
+            grid-row: 6;
+            grid-column: 1; 
+        }       
+    }
+    
+
+
 } /* End mobile friendly */
 
 
@@ -204,25 +315,27 @@
         display: grid;
         grid-template-areas:
         'header1 header1' 
-        'post1 post2' 'post3 .' 
+        'post1 post2' 
+        'post3 .' 
         'header2 header2' 
         'post4 post5' 
         'post6 .';
-        grid-template-columns: 50%;
+        grid-template-columns: 45% 45%;
         grid-template-rows: auto;
-        grid-gap: 0;
+        align-content: center;
+        grid-gap: 5%;
         @include setmp-all(0);
 
         .headline1 {
-            grid-area: header1;
+            grid-area: header1; 
             grid-row: 1;
-            grid-column: 1 / span 2;            
+            grid-column: 1 / span 2;           
         }
      
         .headline2 {
-            grid-area: header2; 
+            grid-area: header2;  
             grid-row: 4;
-            grid-column: 1 / span 2;             
+            grid-column: 1 / span 2;           
         }
     
         [class^="headline"] {
@@ -259,12 +372,12 @@
         grid-column: 1;
     }
     .blog5 { 
-        grid-area: post5;    
+        grid-area: post5;
         grid-row: 5;
-        grid-column: 2;
+        grid-column: 2;    
     }
     .blog6 { 
-        grid-area: post6; 
+        grid-area: post6;
         grid-row: 6;
         grid-column: 1;
     }

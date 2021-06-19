@@ -45,13 +45,12 @@ footer {
   bottom: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   grid-column-gap: 1em;
   grid-row-gap: 1em;
-  border: 6px solid red;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -67,7 +66,6 @@ footer .footnav {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
-  border: 3px solid white;
 }
 
 footer .footimg {
@@ -77,7 +75,6 @@ footer .footimg {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
-  border: 3px dashed white;
 }
 
 footer .foottxt {
@@ -87,7 +84,6 @@ footer .foottxt {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  border: 3px dotted white;
 }
 
 /*Header Design */
@@ -220,11 +216,11 @@ nav li a:focus {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    font-size: 2rem;
   }
-  body {
-    background-color: red;
-    /*testing purpose */
-  }
+  /*body {
+        background-color: red; testing purpose
+    }*/
   .flexdate {
     display: none;
   }
@@ -232,10 +228,9 @@ nav li a:focus {
     font-size: 1.5rem;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     grid-gap: 1em;
-    border: 4px solid blue;
     padding: 1em 0;
   }
   footer .footnav {
@@ -263,8 +258,7 @@ nav li a:focus {
 /* For tablets: */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   body {
-    background-color: skyblue;
-    /*testing purpose */
+    /*background-color: skyblue; testing purpose */
     font-size: 3rem;
   }
   nav {
@@ -357,39 +351,47 @@ Should've started with mobile first and worked my way up, but well, for next tim
         }*/
 }
 
-.blog1 {
+.grid-container3 .blog1 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: post1;
+  -ms-grid-row: 2;
   grid-row: 2;
+  -ms-grid-column: 1;
   grid-column: 1;
 }
 
-.blog2 {
+.grid-container3 .blog2 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: post2;
+  -ms-grid-row: 2;
   grid-row: 2;
+  -ms-grid-column: 2;
   grid-column: 2;
 }
 
-.blog3 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
+.grid-container3 .blog3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
   grid-area: post3;
+  -ms-grid-row: 2;
   grid-row: 2;
+  -ms-grid-column: 3;
   grid-column: 3;
 }
 
-.blog4 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
+.grid-container3 .blog4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
   grid-area: post4;
+  -ms-grid-row: 4;
   grid-row: 4;
+  -ms-grid-column: 1;
   grid-column: 1;
 }
 
-.blog5 {
+.grid-container3 .blog5 {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: post5;
@@ -399,7 +401,7 @@ Should've started with mobile first and worked my way up, but well, for next tim
   grid-column: 2;
 }
 
-.blog6 {
+.grid-container3 .blog6 {
   -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: post6;
@@ -409,18 +411,18 @@ Should've started with mobile first and worked my way up, but well, for next tim
   grid-column: 3;
 }
 
-[class^="blog"] {
+.grid-container3 [class^="blog"] {
   width: 100%;
   text-align: center;
   margin: 0.8em auto;
 }
 
-[class^="blog"] a {
+.grid-container3 [class^="blog"] a {
   text-decoration: none;
   color: white;
 }
 
-[class^="blog"] a .desc {
+.grid-container3 [class^="blog"] a .desc {
   background-color: #0e0d0d;
   color: white;
   text-align: center;
@@ -428,7 +430,7 @@ Should've started with mobile first and worked my way up, but well, for next tim
   margin-top: -0.3em;
 }
 
-[class^="blog"] img {
+.grid-container3 [class^="blog"] img {
   max-width: 100%;
   margin: 0 auto;
 }
@@ -438,14 +440,20 @@ Should've started with mobile first and worked my way up, but well, for next tim
 .grid-container2 {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'devimg devimg' 'post1 post2' 'post3 post4';
-  -ms-grid-columns: 45% 45%;
-      grid-template-columns: 45% 45%;
+      grid-template-areas: 'devimg devimg'  'post7 post8'  'post9 post10';
+  -ms-grid-columns: 40% 40%;
+      grid-template-columns: 40% 40%;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  grid-gap: 4% 6%;
-  padding: 1em;
-  margin: 2em 3em;
+  grid-gap: 5%;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .grid-container2 .devheadline {
@@ -458,7 +466,76 @@ Should've started with mobile first and worked my way up, but well, for next tim
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
-  padding: 0.5em 0.5em;
+  margin-top: 6em;
+  width: 100%;
+}
+
+.grid-container2 .devheadline img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.grid-container2 .blog7 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: post7;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.grid-container2 .blog8 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: post8;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.grid-container2 .blog9 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: post9;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.grid-container2 .blog10 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: post10;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.grid-container2 [class^="blog"] {
+  text-align: center;
+  margin: 0.8em auto;
+}
+
+.grid-container2 [class^="blog"] a {
+  text-decoration: none;
+  color: white;
+}
+
+.grid-container2 [class^="blog"] a .desc {
+  background-color: #0e0d0d;
+  color: white;
+  text-align: center;
+  padding: 1em 1em;
+  margin-top: -0.3em;
+}
+
+.grid-container2 [class^="blog"] img {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* END 2x2 Blog Container  */
@@ -466,12 +543,13 @@ Should've started with mobile first and worked my way up, but well, for next tim
   .grid-container3 {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'header1' 'post1' 'post2' 'post3' 'header2' 'post4' 'post5' 'post6';
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
+        grid-template-areas: 'header1' 'post1' 'post2' 'post3' 'header2'  'post4'  'post5'  'post6';
     grid-gap: 0;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
@@ -564,6 +642,69 @@ Should've started with mobile first and worked my way up, but well, for next tim
     padding: 1em 1em;
     margin-top: -0.25em;
   }
+  .grid-container2 {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'devimg' 'post7'  'post8' 'post9' 'post10';
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    grid-gap: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  .grid-container2 .devheadline {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: devimg;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    display: none;
+  }
+  .grid-container2 .blog7 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: post7;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+  .grid-container2 .blog8 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: post8;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+  .grid-container2 .blog9 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: post9;
+    -ms-grid-row: 4;
+    grid-row: 4;
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+  .grid-container2 .blog10 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: post10;
+    -ms-grid-row: 6;
+    grid-row: 6;
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
 }
 
 /* End mobile friendly */
@@ -571,12 +712,14 @@ Should've started with mobile first and worked my way up, but well, for next tim
   .grid-container3 {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: 'header1 header1'  'post1 post2' 'post3 .'  'header2 header2'  'post4 post5'  'post6 .';
-    -ms-grid-columns: 50%;
-        grid-template-columns: 50%;
+        grid-template-areas: 'header1 header1'  'post1 post2'  'post3 .'  'header2 header2'  'post4 post5'  'post6 .';
+    -ms-grid-columns: 45% 45%;
+        grid-template-columns: 45% 45%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-    grid-gap: 0;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    grid-gap: 5%;
     margin: 0;
     padding: 0;
   }

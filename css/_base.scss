@@ -57,11 +57,10 @@ footer {
     position: absolute;
     bottom: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-column-gap: 1em;
     grid-row-gap: 1em;
-    border: 6px solid red;
     justify-items: center;
     align-items: center;
     justify-items: center;
@@ -69,19 +68,16 @@ footer {
     .footnav {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        border: 3px solid white;
     }
 
     .footimg {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
-        border: 3px dashed white;
     }
 
     .foottxt {
         grid-column: 1 / 3;
         grid-row: 2 / 3;
-        border: 3px dotted white;
     }
 }
 
@@ -169,22 +165,26 @@ nav {
     }
 
     nav {
-        justify-content: center;       
+        justify-content: center; 
+        @include setfs(2rem);  
     }
-    body {
-        background-color: red; /*testing purpose */
-    }
+    /*body {
+        background-color: red; testing purpose
+    }*/
 
     .flexdate {
         @include hideonmobile();
     }
 
+
+
+
+
     footer {
         @include setfs(1.5rem);
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-gap: 1em;
-        border: 4px solid blue;
         @include setpadding-tb(1em,0);
         .footnav {
             grid-column: 1 / 1;
@@ -207,7 +207,7 @@ nav {
 /* For tablets: */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
     body {
-        background-color: skyblue; /*testing purpose */
+        /*background-color: skyblue; testing purpose */
         @include setfs(3rem);
     }
 

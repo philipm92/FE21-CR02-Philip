@@ -1,0 +1,49 @@
+@import "base";
+
+p {
+    @include center-tag();
+    text-align: left;
+    @include setmargin-tb(1em, 1em); 
+}
+h1 {
+    @include center-txt();
+    @include center-tag();
+}
+
+blog {
+    @include setpadding-tb(1em,1em);
+    @include center-tag();
+    @include center-txt();
+    @include setfs(2rem);
+    .heading {
+        @include setpadding-tb(1em,1em);
+        @include setmargin-tb(3em,auto);
+        background-color: $headline-bgcolor; 
+        h3 {
+            @include center-txt();
+                
+        }
+    }    
+}
+
+/* For tablets: */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    blog {
+        @include setfs(1.8rem);
+        .heading {
+            @include setpadding-tb(1em,1em);
+            @include setmargin-tb(1em,auto);
+        }    
+    }
+}
+
+/* For mobile phones: */
+@media screen and (max-width: 480px) {
+    blog {
+        @include setfs(1.5rem);
+        .heading {
+            @include setpadding-tb(1em,1em);
+            @include setmargin-tb(0,auto);
+        }    
+    }
+} 
